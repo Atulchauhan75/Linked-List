@@ -148,5 +148,4 @@ int main()
     cout << "Linked list after deleting the element with given value: ";
     print(head);
     cout << endl;
-
 }
