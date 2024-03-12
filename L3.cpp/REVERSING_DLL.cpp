@@ -61,6 +61,7 @@ node* reverseDLL(node*head ){
     return last->back;
 }
 int main(){
+    
     vector<int> arr={1,2,3,4,5,6};
     node* head=conversion(arr);
     print(head);
