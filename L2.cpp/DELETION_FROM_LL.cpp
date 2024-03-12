@@ -23,7 +23,8 @@ public:
 };
 node *conversion(vector<int> &arr)
 {
-    if(arr.empty()){
+    if (arr.empty())
+    {
         return NULL;
     }
     node *head = new node(arr[0]);
@@ -70,7 +71,7 @@ node *deletestail(node *head)
     delete temp->next;
     temp->next = nullptr;
     return head;
-} 
+}
 // NOW IF WE WANT TO DELETE THE KTH index  ELEMENT OF THE LINKED LIST
 node *deleteskthelement(node *head, int k)
 {
@@ -86,15 +87,17 @@ node *deleteskthelement(node *head, int k)
     int cnt = 0;
     node *temp = head;
     node *prev = NULL;
-    while(temp!=NULL){
+    while (temp != NULL)
+    {
         cnt++;
-        if(cnt==k){
-            prev->next=prev->next->next;
+        if (cnt == k)
+        {
+            prev->next = prev->next->next;
             free(temp);
             break;
         }
-        prev=temp;
-        temp=temp->next;
+        prev = temp;
+        temp = temp->next;
     }
     return head;
 }
@@ -103,7 +106,7 @@ node *DeletesElementWithValue(node *head, int value)
 {
     if (head == NULL)
         return head;
-        // node* temp1=head;
+    // node* temp1=head;
     if (head->data == value)
     {
         node *temp = head;
@@ -113,14 +116,16 @@ node *DeletesElementWithValue(node *head, int value)
     }
     node *temp = head;
     node *prev = NULL;
-    while(temp!=NULL){
-        if(temp->data == value){
-            prev->next=prev->next->next;
+    while (temp != NULL)
+    {
+        if (temp->data == value)
+        {
+            prev->next = prev->next->next;
             free(temp);
             break;
         }
-        prev=temp;
-        temp=temp->next;
+        prev = temp;
+        temp = temp->next;
     }
     return head;
 }
@@ -143,9 +148,10 @@ int main()
     // cout << "Linked list after deleting the kth element : ";
     // print(head);
     // cout << endl;
-    head = DeletesElementWithValue(head , 4);
-    head = DeletesElementWithValue(head , 3);
-    cout << "Linked list after deleting the element with given value: ";
+    head = DeletesElementWithValue(head, 1);
     print(head);
-    cout << endl;
+    // head = DeletesElementWithValue(head, 3);
+    // cout << "Linked list after deleting the element with given value: ";
+    // print(head);
+    // cout << endl;
 }
