@@ -48,15 +48,20 @@ void print(node *head)
 }
 node* findMiddleOfLL(node *head)
 {
+    if (head == nullptr || head->next == nullptr)
+        return head; // If the list is empty or has only one node, return the head
+
     node *slow = head;
-    node *fast = head;
-    while ( fast->next!=NULL && fast->next->next != NULL )
+    node *fast = head->next; // Move fast one step ahead initially
+
+    while (fast != nullptr && fast->next != nullptr)
     {
         slow = slow->next;
         fast = fast->next->next;
     }
     return slow;
 }
+
 int main()
 {
     vector<int> arr = {1, 2, 3, 4,5};
